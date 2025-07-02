@@ -86,7 +86,7 @@ function App() {
             <div className="relative">
               <div className="absolute -inset-4 bg-orange-600/20 blur-3xl"></div>
               <img 
-                src="/public/mike1.jpg" 
+                src="/mike1.jpg" 
                 alt="SEO Expert"
                 className="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
               />
@@ -193,7 +193,7 @@ function App() {
             <div className="order-1 md:order-2 relative">
               <div className="absolute -inset-4 bg-orange-600/20 blur-3xl"></div>
               <img 
-                src="/public/mike2.jpg" 
+                src="/mike2.jpg" 
                 alt="Ομιλία σε Συνέδριο"
                 className="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
               />
@@ -223,7 +223,7 @@ function App() {
       {/* Footer */}
       <footer className="py-8 border-t border-gray-800">
         <div className="container mx-auto px-6 text-center text-gray-400">
-          <p>&copy; 2025 SEO Expert. Κυριαρχούμε στις κατατάξεις Google από το 2015.</p>
+          <p>&copy; 2025 ΜΙχάλης Ζαργιανάκης SEO Expert. Κυριαρχούμε στις κατατάξεις Google από το 2017.</p>
         </div>
       </footer>
 
