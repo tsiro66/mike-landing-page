@@ -223,7 +223,7 @@ function App() {
       {/* Footer */}
       <footer className="py-8 border-t border-gray-800">
         <div className="container mx-auto px-6 text-center text-gray-400">
-          <p>&copy; 2025 SEO Expert. Κυριαρχούμε στις κατατάξεις Google από το 2015.</p>
+          <p>&copy; 2025 ΜΙχάλης Ζαργιανάκης SEO Expert. Κυριαρχούμε στις κατατάξεις Google από το 2017.</p>
         </div>
       </footer>
 
