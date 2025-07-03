@@ -69,11 +69,11 @@ function App() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-orange-600/20 blur-3xl"></div>
+              <div className="absolute -inset-4 blur-3xl"></div>
               <img 
                 src="/mike1.jpg" 
                 alt="Μιχάλης Ζαργιανάκης"
-                className="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                className="relative transform hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-600 to-orange-500 p-6 rounded-2xl shadow-xl">
                 <div className="text-3xl font-bold">7+ Χρόνια</div>
