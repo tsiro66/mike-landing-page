@@ -208,9 +208,9 @@ export default function VideoHeroSection() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 animate-fade-in-up">
             <span className="text-orange-500 block sm:inline">Αν σε ενδιαφέρει</span>
             <br className="hidden sm:block" />
-            <span className="text-white block mt-2 sm:mt-0">η επιχείρησή σου να εμφανίζεται</span>
+            <span className="text-white block mt-2 sm:mt-0 sm:inline">η επιχείρησή σου να εμφανίζεται</span>
             <br className="hidden sm:block" />
-            <span className="text-orange-500 block mt-2 sm:mt-0">στην πρώτη σελίδα της Google</span>
+            <span className="text-orange-500 block mt-2">στην πρώτη σελίδα της Google</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 animate-fade-in-up animation-delay-200 px-4">
             Δες αυτό το 
