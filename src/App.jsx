@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Search, TrendingUp, Award, Users, BarChart3, Zap, ChevronRight, Star, Target, Rocket, Mail, Phone, MessageSquare, Send, CheckCircle, Shield, Clock } from 'lucide-react';
+import { Search, TrendingUp, Award, Users, BarChart3, Zap, ChevronRight, Star, Target, Rocket, Mail, Phone, MessageSquare, Send, CheckCircle, Shield, Clock, ArrowRight } from 'lucide-react';
 import VideoHeroSection from './VideoHeroSection';
+import AboutMe from './AboutMe';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -36,7 +37,8 @@ function App() {
       <section className="py-20 bg-gradient-to-b from-black to-gray-950">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-            <span className="text-orange-500">Θα ήθελα να ξεκινήσω με μια απλή ερώτηση:</span>
+            <span className="text-gray-50">Θα ήθελα να ξεκινήσω με μια απλή </span>
+            <span className="text-orange-500">ερώτηση:</span>
           </h2>
           <div className="space-y-6 text-lg md:text-xl text-gray-300 text-center">
             <p className="font-semibold">
@@ -45,12 +47,12 @@ function App() {
             <p className="text-2xl">
               Στο Facebook; Στο Instagram; <span className="text-orange-500 font-bold">Ή στο Google;</span>
             </p>
-            <p className="text-xl font-semibold pt-6">
+            <p className="text-2xl font-semibold pt-6">
               Πιστεύω πως και οι δύο γνωρίζουμε την απάντηση.
             </p>
           </div>
-          
-          <div className="mt-16 p-8 bg-gradient-to-r from-gray-900 to-gray-950 rounded-2xl border border-orange-500/20">
+          <div className="mt-12 text-center">
+
             <p className="text-lg text-gray-300 leading-relaxed">
               Το λέω αυτό γιατί, παρότι τα social media είναι χρήσιμα, συχνά ξεχνάμε τη δυναμική της μεγαλύτερης πλατφόρμας αναζήτησης στον κόσμο: <span className="text-orange-500 font-bold">της Google</span>.
             </p>
@@ -61,72 +63,50 @@ function App() {
               Το ζήτημα είναι αν σε βρίσκουν.
             </p>
           </div>
-        </div>
+          </div>
       </section>
 
       {/* About Section with Photo */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="absolute -inset-4 blur-3xl"></div>
-              <img 
-                src="/mike1.jpg" 
-                alt="Μιχάλης Ζαργιανάκης"
-                className="relative transform hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-600 to-orange-500 p-6 rounded-2xl shadow-xl">
-                <div className="text-3xl font-bold">7+ Χρόνια</div>
-                <div className="text-sm">Εμπειρία</div>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="text-orange-500">Άσε με να συστηθώ...</span>
-              </h2>
-              <p className="text-xl mb-6">
-                Ονομάζομαι <span className="font-bold text-orange-500">Μιχάλης Ζαργιανάκης</span> και τα τελευταία 7 χρόνια έχω αφιερωθεί σε ένα πράγμα:
-              </p>
-              <p className="text-lg text-gray-300 mb-6">
-                <span className="font-bold text-white">Να βοηθάω επιχειρήσεις να εμφανίζονται στις πρώτες θέσεις της Google.</span> Δεν πουλάω διαφημίσεις. Δεν είμαι ένας ακόμα τύπος που θα σου πει "βάλε budget και βλέπουμε".
-              </p>
-              <div className="bg-gray-900/50 p-6 rounded-xl border border-gray-800">
-                <p className="text-gray-300 mb-4">
-                  Τα πράγματα είναι πιο εύκολα όταν έχεις 4.000 και 5.000 ευρώ να ξοδέψεις σε διαφήμιση.
-                </p>
-                <p className="text-lg font-bold text-orange-500">
-                  Το πραγματικό ερώτημα όμως είναι: τι μπορείς να κάνεις όταν δεν διαθέτεις αυτό το budget;
-                </p>
-                <p className="text-xl font-bold text-white mt-4">
-                  Η απάντηση είναι απλή: φροντίζεις, όταν κάποιος σε αναζητά, να σε βρίσκει.
-                </p>
-                <p className="text-gray-300 mt-2">
-                  Και στις περισσότερες περιπτώσεις αυτό είναι εφικτό.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutMe />
 
+      <div className="flex justify-center mb-8">
+        <button className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-full font-semibold 
+                        hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400
+                        shadow-lg hover:shadow-xl transform hover:scale-105">
+          <span>Ξεκίνα Τώρα</span>
+        </button>
+      </div>
       {/* Services Explanation Section */}
       <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            <span className="text-orange-500">Πώς Λειτουργεί η Υπηρεσία</span>
+            <span className="text-orange-500">Πώς Λειτουργεί η Υπηρεσία?</span>
           </h2>
           
-          <div className="space-y-8 text-lg text-gray-300">
+          <div className="space-y-8 text-lg text-gray-300 text-center">
             <p>
-              Κάθε επιχείρηση είναι διαφορετική και έχει τις δικές της ανάγκες. Δεν έχει σημασία αν έχεις εστιατόριο, κομμωτήριο ή δικηγορικό γραφείο. Η υπηρεσία που προσφέρω λειτουργεί για κάθε τύπο επιχείρησης.
+              Κάθε επιχείρηση είναι διαφορετική και έχει τις δικές της ανάγκες.
+            </p>
+            <p>
+              Δεν έχει σημασία αν έχεις εστιατόριο, κομμωτήριο ή δικηγορικό γραφείο..
+            </p>
+            <p>
+               Η υπηρεσία που προσφέρω λειτουργεί για κάθε τύπο επιχείρησης.
             </p>
             
             <div className="bg-gradient-to-r from-orange-600/10 to-orange-500/10 p-8 rounded-2xl border border-orange-500/30">
               <p className="text-xl font-bold text-white mb-4">
                 Αυτό όμως που την κάνει να ξεχωρίζει, είναι ότι δεν προσφέρεται μαζικά.
               </p>
+              <p className="text-xl font-bold text-white mb-4">
+                Δεν συνεργάζομαι με "όλους όσους θέλουν".
+              </p>
+              
               <p>
-                Δεν συνεργάζομαι με "όλους όσους θέλουν". Συνεργάζομαι μόνο με όσους πραγματικά μπορώ να βοηθήσω. Και αυτό γιατί για κάθε περιοχή και για κάθε είδος επιχείρησης, επιλέγω να δουλεύω μόνο με έναν επαγγελματία.
+                 Συνεργάζομαι μόνο με όσους πραγματικά μπορώ να βοηθήσω.
+              </p>
+              <p>
+                  Και αυτό γιατί για κάθε περιοχή και για κάθε είδος επιχείρησης, επιλέγω να δουλεύω μόνο με έναν επαγγελματία.
               </p>
               <p className="text-xl text-orange-500 font-bold mt-4">
                 Γιατί αλλιώς δεν έχει κανένα νόημα. Αν αναλάβω και τον ανταγωνιστή σου, ποιον θα βγάλω πρώτο στην Google;
@@ -164,7 +144,7 @@ function App() {
             {[
               { value: '100+', label: 'Επιχειρήσεις' },
               { value: '7+', label: 'Χρόνια Εμπειρίας' },
-              { value: '1η', label: 'Θέση στο Google' },
+              { value: '1η', label: 'Σελίδα στο Google' },
               { value: '48h', label: 'Χρόνος Απάντησης' }
             ].map((stat, index) => (
               <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300">
@@ -186,9 +166,12 @@ function App() {
               <span className="text-orange-500">Η Υπόσχεσή μου</span>
             </h2>
             
-            <div className="space-y-6 text-lg text-gray-300">
+            <div className="space-y-6 text-lg text-gray-300 text-center">
               <p>
-                Δεν σου υπόσχομαι μαγικά αποτελέσματα. Σου υπόσχομαι όμως μια <span className="font-bold text-white">ξεκάθαρη στρατηγική</span>, προσαρμοσμένη στις δικές σου ανάγκες, με στόχο την <span className="font-bold text-white">πραγματική αύξηση των πελατών σου μέσω Google</span>.
+                Δεν σου υπόσχομαι μαγικά αποτελέσματα.
+              </p>
+              <p>
+                Σου υπόσχομαι όμως μια <span className="font-bold text-white">ξεκάθαρη στρατηγική</span>, προσαρμοσμένη στις δικές σου ανάγκες, με στόχο την <span className="font-bold text-white">πραγματική αύξηση των πελατών σου μέσω Google</span>.
               </p>
               
               <div className="bg-orange-500/10 p-6 rounded-xl border border-orange-500/30">
@@ -196,7 +179,10 @@ function App() {
                   Και για να έχεις το κεφάλι σου ήσυχο:
                 </p>
                 <p className="text-white font-semibold">
-                  Η υπηρεσία συνοδεύεται από εγγύηση. Αν μέσα στους πρώτους έξι μήνες δεν δεις μετρήσιμα αποτελέσματα, παίρνεις τα χρήματά σου πίσω.
+                  Η υπηρεσία συνοδεύεται από εγγύηση.
+                </p>
+                <p className="text-white font-semibold">
+                  Αν μέσα στους πρώτους έξι μήνες δεν δεις μετρήσιμα αποτελέσματα, παίρνεις τα χρήματά σου πίσω.
                 </p>
               </div>
               
@@ -209,49 +195,7 @@ function App() {
       </section>
 
       {/* Bio Section with Second Photo */}
-      <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="text-orange-500">Σχετικά με τον Μιχάλη Ζαργιανάκη</span>
-              </h2>
-              <div className="space-y-4 text-gray-300">
-                <p>
-                  Ο κ. Μιχάλης Ζαργιανάκης έχει βοηθήσει πάνω από 100 επιχειρήσεις τα τελευταία 7 χρόνια να αυξήσουν τα έσοδά τους αξιοποιώντας στοχευμένα τη δύναμη της Google.
-                </p>
-                <p>
-                  Με σπουδές στην Πληροφορική και εξειδίκευση στο Digital Marketing, έχει αναπτύξει μεθοδολογία που βασίζεται σε στρατηγική προβολή και μετρήσιμα αποτελέσματα.
-                </p>
-                <p>
-                  Σήμερα συνεργάζεται επιλεκτικά με επαγγελματίες που θέλουν να αναπτύξουν την επιχείρησή τους οργανικά, χτίζοντας πραγματική παρουσία εκεί που οι πελάτες τους ψάχνουν πρώτοι: <span className="font-bold text-orange-500">στη Google</span>.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                {[
-                  { icon: <Award />, label: 'Πτυχίο Πληροφορικής' },
-                  { icon: <BarChart3 />, label: 'Εξειδίκευση Digital Marketing' },
-                  { icon: <Users />, label: '100+ Επιτυχημένες Συνεργασίες' },
-                  { icon: <Star />, label: 'Μετρήσιμα Αποτελέσματα' }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="text-orange-400">{item.icon}</div>
-                    <span className="text-sm">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-orange-600/20 blur-3xl"></div>
-              <img 
-                src="/mike2.jpg" 
-                alt="Μιχάλης Ζαργιανάκης"
-                className="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Contact Form Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-950">
@@ -259,20 +203,15 @@ function App() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
               <span className="text-orange-500">
-                Ελέγξτε τη Διαθεσιμότητα
+                Θα επικοινωνήσω μαζί σου μέσα σε 48 ώρες
               </span>
             </h2>
             <p className="text-xl text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-              Αν θέλεις να δεις αν η επιχείρησή σου πληροί τις προϋποθέσεις για συνεργασία, άφησέ μου τα στοιχεία σου.
+                Θα δούμε αν η περιοχή σου είναι ακόμα διαθέσιμη και αν έχει νόημα να προχωρήσουμε.
             </p>
 
             <div className="bg-gradient-to-b from-gray-900 to-gray-950 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-center">
-                Θα επικοινωνήσω μαζί σου μέσα σε 48 ώρες
-              </h3>
-              <p className="text-gray-400 text-center mb-8">
-                Θα δούμε αν η περιοχή σου είναι ακόμα διαθέσιμη και αν έχει νόημα να προχωρήσουμε.
-              </p>
+            
               
               <div className="space-y-6">
                 <div>
@@ -343,6 +282,49 @@ function App() {
         </div>
       </section>
 
+ <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <span className="text-orange-500">Σχετικά με τον Μιχάλη Ζαργιανάκη</span>
+              </h2>
+              <div className="space-y-4 text-gray-300">
+                <p>
+                  Ο κ. Μιχάλης Ζαργιανάκης έχει βοηθήσει πάνω από 100 επιχειρήσεις τα τελευταία 7 χρόνια να αυξήσουν τα έσοδά τους αξιοποιώντας στοχευμένα τη δύναμη της Google.
+                </p>
+                <p>
+                  Με σπουδές στην Πληροφορική και εξειδίκευση στο Digital Marketing, έχει αναπτύξει μεθοδολογία που βασίζεται σε στρατηγική προβολή και μετρήσιμα αποτελέσματα.
+                </p>
+                <p>
+                  Σήμερα συνεργάζεται επιλεκτικά με επαγγελματίες που θέλουν να αναπτύξουν την επιχείρησή τους οργανικά, χτίζοντας πραγματική παρουσία εκεί που οι πελάτες τους ψάχνουν πρώτοι: <span className="font-bold text-orange-500">στη Google</span>.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {[
+                  { icon: <Award />, label: 'Πτυχίο Πληροφορικής' },
+                  { icon: <BarChart3 />, label: 'Εξειδίκευση Digital Marketing' },
+                  { icon: <Users />, label: '100+ Επιτυχημένες Συνεργασίες' },
+                  { icon: <Star />, label: 'Μετρήσιμα Αποτελέσματα' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="text-orange-400">{item.icon}</div>
+                    <span className="text-sm">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-orange-600/20 blur-3xl"></div>
+              <img 
+                src="/mike2.jpg" 
+                alt="Μιχάλης Ζαργιανάκης"
+                className="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Footer */}
       <footer className="py-8 border-t border-gray-800">
         <div className="container mx-auto px-6 text-center text-gray-400">

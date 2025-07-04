@@ -4,7 +4,7 @@ export default function VideoHeroSection() {
   const playerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [showMobileVideo, setShowMobileVideo] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   useEffect(() => {
     // Check if mobile
@@ -15,7 +15,7 @@ export default function VideoHeroSection() {
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
-    // Only load video on desktop
+    // Only load background video on desktop
     if (!isMobile) {
       // Load YouTube IFrame API
       const tag = document.createElement('script');
@@ -133,8 +133,8 @@ export default function VideoHeroSection() {
             }
           }
 
-          /* Mobile video modal */
-          .mobile-video-modal {
+          /* Video modal */
+          .video-modal {
             position: fixed;
             top: 0;
             left: 0;
@@ -147,14 +147,14 @@ export default function VideoHeroSection() {
             justify-content: center;
           }
 
-          .mobile-video-container {
+          .video-modal-container {
             position: relative;
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             aspect-ratio: 16/9;
           }
 
-          .mobile-video-container iframe {
+          .video-modal-container iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -206,54 +206,34 @@ export default function VideoHeroSection() {
         {/* Content */}
         <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 animate-fade-in-up">
-            <span className="text-orange-500 block sm:inline">Αν σε ενδιαφέρει</span>
+            <span className="text-gray-50 block sm:inline">Αν σε ενδιαφέρει</span>
             <br className="hidden sm:block" />
-            <span className="text-white block mt-2 sm:mt-0 sm:inline">η επιχείρησή σου να εμφανίζεται</span>
+            <span className="text-gray-50 block mt-2 sm:mt-0 sm:inline">η επιχείρησή σου να εμφανίζεται</span>
             <br className="hidden sm:block" />
             <span className="text-orange-500 block mt-2">στην πρώτη σελίδα της Google</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 animate-fade-in-up animation-delay-200 px-4">
-            Δες αυτό το 
-            <a 
-              href={isMobile ? "#" : "https://www.youtube.com/watch?v=Da1XEUPexRM"}
-              onClick={isMobile ? (e) => { e.preventDefault(); setShowMobileVideo(true); } : undefined}
-              target={isMobile ? undefined : "_blank"}
-              rel={isMobile ? undefined : "noopener noreferrer"}
-              className="text-orange-500 font-bold hover:underline mx-1 cursor-pointer"
-            >
-              βίντεο
-            </a> 
-            και διάβασε το σύντομο μήνυμα που ακολουθεί.
-          </p>
+         
           
-          {/* Mobile-optimized CTA button with play icon */}
-          {isMobile && (
-            <button
-              onClick={() => setShowMobileVideo(true)}
-              className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold 
-                        hover:bg-orange-600 transition-colors animate-fade-in-up animation-delay-400 mb-8
-                        shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm-2 14.5v-9l6 4.5-6 4.5z"/>
-              </svg>
-              Παρακολουθήστε το Βίντεο
-            </button>
-          )}
+          {/* CTA button with play icon - Now shown on all devices */}
+          <button
+            onClick={() => setShowVideoModal(true)}
+            className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold 
+                      hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400 mb-8
+                      shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm-2 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            Παρακολουθήστε το Βίντεο
+          </button>
           
-          {/* Scroll indicator */}
-          <div className="animate-bounce mt-8 sm:mt-12">
-            <div className="w-8 h-12 border-2 border-orange-500/30 rounded-full flex justify-center mx-auto">
-              <div className="w-1 h-4 bg-orange-500/50 rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
         </div>
 
-        {/* Mobile Video Modal */}
-        {showMobileVideo && isMobile && (
-          <div className="mobile-video-modal" onClick={() => setShowMobileVideo(false)}>
-            <div className="mobile-video-container" onClick={(e) => e.stopPropagation()}>
-              <button className="close-button" onClick={() => setShowMobileVideo(false)}>
+        {/* Video Modal - Now shown on all devices */}
+        {showVideoModal && (
+          <div className="video-modal" onClick={() => setShowVideoModal(false)}>
+            <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
+              <button className="close-button" onClick={() => setShowVideoModal(false)}>
                 ×
               </button>
               <iframe
