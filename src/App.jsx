@@ -14,6 +14,7 @@ function App() {
   });
   const [submitStatus, setSubmitStatus] = useState('');
   const [showGDPR, setShowGDPR] = useState(false);
+  const [validationError, setValidationError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -33,6 +34,9 @@ useEffect(() => {
   // Validate form fields
   if (!formData.name || !formData.email || !formData.phone) {
     setSubmitStatus('Παρακαλώ συμπληρώστε όλα τα πεδία.');
+    setValidationError(true);
+    // Remove error highlight after 3 seconds
+    setTimeout(() => setValidationError(false), 3000);
     return;
   }
   
@@ -57,7 +61,7 @@ useEffect(() => {
     
     // Success message
     setSubmitStatus('Ευχαριστούμε! Θα επικοινωνήσουμε μαζί σας μέσα σε 48 ώρες.');
-    
+    setValidationError(false);
     // Clear form after 5 seconds
     setTimeout(() => {
       setFormData({ name: '', email: '', phone: '' });
@@ -67,10 +71,11 @@ useEffect(() => {
   } catch (error) {
     console.error('EmailJS error:', error);
     setSubmitStatus('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας τηλεφωνικά.');
-    
+    setValidationError(true);
     // Clear error message after 5 seconds
     setTimeout(() => {
       setSubmitStatus('');
+      setValidationError(false);
     }, 5000);
   }
   
@@ -155,7 +160,7 @@ useEffect(() => {
               <p>
                  Συνεργάζομαι μόνο με όσους πραγματικά μπορώ να βοηθήσω.
               </p>
-              <p>
+              <p className='pt-4'>
                   Και αυτό γιατί για κάθε περιοχή και για κάθε είδος επιχείρησης, επιλέγω να δουλεύω μόνο με έναν επαγγελματία.
               </p>
               <p className="text-xl text-orange-500 font-bold mt-4">
@@ -273,7 +278,7 @@ useEffect(() => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.name ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
                     placeholder="Το όνομά σας"
                   />
                 </div>
@@ -287,7 +292,7 @@ useEffect(() => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.email ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
                     placeholder="email@example.com"
                   />
                 </div>
@@ -301,7 +306,7 @@ useEffect(() => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
                     placeholder="+30 123 456 7890"
                   />
                 </div>
@@ -314,7 +319,7 @@ useEffect(() => {
                 </button>
 
                 {submitStatus && (
-                  <div className="text-center text-green-400 mt-4 animate-fade-in flex items-center justify-center gap-2">
+                  <div className={`text-center mt-4 animate-fade-in flex items-center justify-center gap-2 ${validationError ? 'text-red-400' : 'text-green-400'}`}>
                     <CheckCircle className="w-5 h-5" />
                     {submitStatus}
                   </div>
