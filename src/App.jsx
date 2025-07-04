@@ -32,10 +32,30 @@ useEffect(() => {
   e.preventDefault();
   
   // Validate form fields
+  // Email regex for basic validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   if (!formData.name || !formData.email || !formData.phone) {
     setSubmitStatus('Παρακαλώ συμπληρώστε όλα τα πεδία.');
     setValidationError(true);
-    // Remove error highlight after 3 seconds
+    setTimeout(() => setValidationError(false), 3000);
+    setTimeout(() => setSubmitStatus(''), 3000);
+    return;
+  }
+
+  if (!emailRegex.test(formData.email)) {
+    setSubmitStatus('Παρακαλώ εισάγετε ένα έγκυρο email.');
+    setValidationError(true);
+    setTimeout(() => setValidationError(false), 3000);
+    setTimeout(() => setSubmitStatus(''), 3000);
+    return;
+  }
+
+  // Phone validation: must start with 69 and be exactly 10 digits
+  const phoneRegex = /^69\d{8}$/;
+  if (!phoneRegex.test(formData.phone)) {
+    setSubmitStatus('Το τηλέφωνο πρέπει να ξεκινά με 69 και να έχει 10 ψηφία.');
+    setValidationError(true);
     setTimeout(() => setValidationError(false), 3000);
     setTimeout(() => setSubmitStatus(''), 3000);
     return;
@@ -44,11 +64,10 @@ useEffect(() => {
   try {
     // EmailJS template parameters
     const templateParams = {
-      from_name: formData.name,
+      name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
       to_name: 'Μιχάλης Ζαργιανάκης',
-      message: `Νέα επικοινωνία από: ${formData.name}`,
       reply_to: formData.email,
     };
     
@@ -308,7 +327,7 @@ useEffect(() => {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="+30 123 456 7890"
+                    placeholder="123 456 7890"
                   />
                 </div>
 
@@ -382,37 +401,38 @@ useEffect(() => {
         </div>
       </section>
       {/* Footer */}
-      <footer className="py-8 border-t border-gray-800">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400">
-          {/* Left Section */}
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <p>&copy; 2025 Μιχάλης Ζαργιανάκης - SEO Expert. Βοηθάμε επιχειρήσεις να κυριαρχούν στο Google από το 2017.</p>
-            <button
-              onClick={() => setShowGDPR(true)}
-              className="hover:text-white transition-colors duration-300 text-sm mt-2 inline-block"
-            >
-              Πολιτική Απορρήτου & GDPR
-            </button>
-          </div>
+      <footer className="bg-black border-t border-gray-800 py-10">
+  <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400 text-sm">
+    
+    {/* Left Section */}
+    <div className="text-center md:text-left space-y-2">
+      <p>&copy; 2025 Μιχάλης Ζαργιανάκης - SEO Expert</p>
+      <p>Βοηθάμε επιχειρήσεις να κυριαρχούν στο Google από το 2017.</p>
+      
+    </div>
 
-          {/* Right Section */}
-          <div className="text-center md:text-right">
-            <p>
-              Website built by{' '}
-              <a
-                href="https://tsironisportfolio.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Thodoris Tsironis
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    {/* Right Section */}
+    <div className="text-center flex flex-col md:text-right space-y-2">
+      
+      <p>Κατασκευή Ιστοσελίδας από</p>
+      <a
+        href="https://tsironisportfolio.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-orange-500 hover:text-orange-400 transition duration-200 underline underline-offset-4"
+      >
+        Thodoris Tsironis
+      </a>
+      <button
+        onClick={() => setShowGDPR(true)}
+        className="text-orange-500 hover:text-orange-400 transition duration-200 underline underline-offset-4"
+      >
+        Πολιτική Απορρήτου & GDPR
+      </button>
+    </div>
+  </div>
+</footer>
+
 
       {/* GDPR Modal */}
       <GDPR isOpen={showGDPR} onClose={() => setShowGDPR(false)} />
