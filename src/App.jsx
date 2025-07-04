@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, TrendingUp, Award, Users, BarChart3, Zap, ChevronRight, Star, Target, Rocket, Mail, Phone, MessageSquare, Send, CheckCircle, Shield, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-scroll';
 import VideoHeroSection from './VideoHeroSection';
 import AboutMe from './AboutMe';
+import GDPR from './GDPR';
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -10,6 +13,7 @@ function App() {
     phone: ''
   });
   const [submitStatus, setSubmitStatus] = useState('');
+  const [showGDPR, setShowGDPR] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,15 +22,59 @@ function App() {
     });
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
+useEffect(() => {
+    emailjs.init('zjLsb9c2U7f1hVAsO'); 
+},[]);
+
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  // Validate form fields
+  if (!formData.name || !formData.email || !formData.phone) {
+    setSubmitStatus('Παρακαλώ συμπληρώστε όλα τα πεδία.');
+    return;
+  }
+  
+  try {
+    // EmailJS template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      to_name: 'Μιχάλης Ζαργιανάκης',
+      message: `Νέα επικοινωνία από: ${formData.name}`,
+      reply_to: formData.email,
+    };
+    
+    // Send email using EmailJS
+    await emailjs.send(
+      'service_jaxuwi6',     // Replace with your EmailJS service ID
+      'template_0sbmcff',    // Replace with your EmailJS template ID
+      templateParams,
+      'zjLsb9c2U7f1hVAsO'      // Replace with your EmailJS public key
+    );
+    
+    // Success message
     setSubmitStatus('Ευχαριστούμε! Θα επικοινωνήσουμε μαζί σας μέσα σε 48 ώρες.');
     
+    // Clear form after 5 seconds
     setTimeout(() => {
       setFormData({ name: '', email: '', phone: '' });
       setSubmitStatus('');
     }, 5000);
-  };
+    
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    setSubmitStatus('Υπήρξε ένα σφάλμα. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας τηλεφωνικά.');
+    
+    // Clear error message after 5 seconds
+    setTimeout(() => {
+      setSubmitStatus('');
+    }, 5000);
+  }
+  
+};
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -36,45 +84,47 @@ function App() {
       {/* The Question Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-950">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-            <span className="text-gray-50">Θα ήθελα να ξεκινήσω με μια απλή </span>
-            <span className="text-orange-500">ερώτηση:</span>
-          </h2>
-          <div className="space-y-6 text-lg md:text-xl text-gray-300 text-center">
-            <p className="font-semibold">
-              Όταν έχεις ένα πρόβλημα, όταν ψάχνεις για έναν γιατρό ή ακόμα και όταν θέλεις να βγεις για έναν καφέ, πού κάνεις την αναζήτηση;
-            </p>
-            <p className="text-2xl">
-              Στο Facebook; Στο Instagram; <span className="text-orange-500 font-bold">Ή στο Google;</span>
-            </p>
-            <p className="text-2xl font-semibold pt-2">
-              Πιστεύω πως και οι δύο γνωρίζουμε την απάντηση.
-            </p>
-          </div>
-          <div className="pt-3 text-center">
-
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Το λέω αυτό γιατί, παρότι τα social media είναι χρήσιμα, συχνά ξεχνάμε τη δυναμική της μεγαλύτερης πλατφόρμας αναζήτησης στον κόσμο: <span className="text-orange-500 font-bold">της Google</span>.
-            </p>
-            <p className="text-xl font-bold text-white mt-4">
-              Και η αλήθεια είναι απλή: εκεί βρίσκονται οι πελάτες που ήδη αναζητούν αυτό που προσφέρει η επιχείρησή σου.
-            </p>
-            <p className="text-2xl text-orange-500 font-bold mt-6 text-center">
-              Το ζήτημα είναι αν σε βρίσκουν.
-            </p>
-          </div>
-          </div>
-      </section>
+            <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
+                <span className="text-gray-50">Θα ήθελα να ξεκινήσω με μια απλή </span>
+                <span className="text-orange-500">ερώτηση:</span>
+            </h2>
+            <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
+                <p className="font-semibold">
+                    Όταν έχεις ένα πρόβλημα, όταν ψάχνεις για έναν γιατρό ή ακόμα και όταν θέλεις να βγεις για έναν καφέ, πού κάνεις την αναζήτηση;
+                </p>
+                <p className="text-2xl">
+                    Στο Facebook; Στο Instagram; <span className="text-orange-500 font-bold">Ή στο Google;</span>
+                </p>
+                <p className="text-2xl font-semibold">
+                    Πιστεύω πως και οι δύο γνωρίζουμε την απάντηση.
+                </p>
+                <p className="text-lg leading-relaxed">
+                    Το λέω αυτό γιατί, παρότι τα social media είναι χρήσιμα, συχνά ξεχνάμε τη δυναμική της μεγαλύτερης πλατφόρμας αναζήτησης στον κόσμο: <span className="text-orange-500 font-bold">της Google</span>.
+                </p>
+                <p className="text-xl font-bold text-white">
+                    Και η αλήθεια είναι απλή: εκεί βρίσκονται οι πελάτες που ήδη αναζητούν αυτό που προσφέρει η επιχείρησή σου.
+                </p>
+                <p className="text-2xl text-orange-500 font-bold">
+                    Το ζήτημα είναι αν σε βρίσκουν.
+                </p>
+            </div>
+        </div>
+    </section>
 
       {/* About Section with Photo */}
       <AboutMe />
 
       <div className="flex justify-center mb-8">
-        <button className="inline-flex items-center text-2xl justify-center bg-orange-500 text-white py-3 px-8 rounded-full font-semibold 
+        <Link
+          to="contact-form"
+          smooth={true}
+          duration={800}
+          offset={-50}
+          className="inline-flex items-center text-2xl justify-center bg-orange-500 text-white py-3 px-8 rounded-full font-semibold 
                         hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400
                         shadow-lg hover:shadow-xl transform hover:scale-105">
           <span className='pb-1'>Ξεκίνα Τώρα</span>
-        </button>
+        </Link>
       </div>
       {/* Services Explanation Section */}
       <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
@@ -198,7 +248,7 @@ function App() {
      
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-950">
+      <section id="contact-form" className="py-20 bg-gradient-to-b from-black to-gray-950">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
@@ -327,10 +377,39 @@ function App() {
       </section>
       {/* Footer */}
       <footer className="py-8 border-t border-gray-800">
-        <div className="container mx-auto px-6 text-center text-gray-400">
-          <p>&copy; 2025 Μιχάλης Ζαργιανάκης - SEO Expert. Βοηθάμε επιχειρήσεις να κυριαρχούν στο Google από το 2017.</p>
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400">
+          {/* Left Section */}
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <p>&copy; 2025 Μιχάλης Ζαργιανάκης - SEO Expert. Βοηθάμε επιχειρήσεις να κυριαρχούν στο Google από το 2017.</p>
+            <button
+              onClick={() => setShowGDPR(true)}
+              className="hover:text-white transition-colors duration-300 text-sm mt-2 inline-block"
+            >
+              Πολιτική Απορρήτου & GDPR
+            </button>
+          </div>
+
+          {/* Right Section */}
+          <div className="text-center md:text-right">
+            <p>
+              Website built by{' '}
+              <a
+                href="https://tsironisportfolio.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-300"
+              >
+                Thodoris Tsironis
+              </a>
+            </p>
+          </div>
         </div>
-      </footer>
+      </div>
+    </footer>
+
+      {/* GDPR Modal */}
+      <GDPR isOpen={showGDPR} onClose={() => setShowGDPR(false)} />
 
       <style>{`
         @keyframes fade-in-up {
