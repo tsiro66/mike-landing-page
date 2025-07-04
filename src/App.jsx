@@ -37,6 +37,7 @@ useEffect(() => {
     setValidationError(true);
     // Remove error highlight after 3 seconds
     setTimeout(() => setValidationError(false), 3000);
+    setTimeout(() => setSubmitStatus(''), 3000);
     return;
   }
   
