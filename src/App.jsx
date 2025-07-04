@@ -70,10 +70,10 @@ function App() {
       <AboutMe />
 
       <div className="flex justify-center mb-8">
-        <button className="inline-flex items-center text-2xl justify-center bg-orange-500 text-white px-6 py-4 rounded-full font-semibold 
+        <button className="inline-flex items-center text-2xl justify-center bg-orange-500 text-white py-3 px-8 rounded-full font-semibold 
                         hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400
                         shadow-lg hover:shadow-xl transform hover:scale-105">
-          <span>Ξεκίνα Τώρα</span>
+          <span className='pb-1'>Ξεκίνα Τώρα</span>
         </button>
       </div>
       {/* Services Explanation Section */}
