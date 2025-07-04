@@ -40,7 +40,7 @@ const AboutMe = () => {
               Το πραγματικό ερώτημα όμως είναι:
             </p>
             <p className="text-xl text-orange-500 mb-4">
-              τι μπορείς να κάνεις όταν δεν διαθέτεις αυτό το budget;
+              Τι μπορείς να κάνεις όταν δεν διαθέτεις αυτό το budget;
             </p>
             <p className="text-xl text-white mb-2">
               Η απάντηση είναι απλή: φροντίζεις, όταν κάποιος σε αναζητά, να σε
@@ -58,8 +58,8 @@ const AboutMe = () => {
               className="relative transform hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-600 to-orange-500 p-4 md:p-6 rounded-2xl shadow-xl">
-              <div className="text-3xl font-bold">7+ Χρόνια Εμπειρία</div>
-              <div className="text-sm">100+ Επιχειρήσεις</div>
+              <div className="text-xl font-bold">100+ Επιχειρήσεις</div>
+              <div className="text-lg">7+ χρόνια εμπειρίας</div>
             </div>
           </div>
         </div>

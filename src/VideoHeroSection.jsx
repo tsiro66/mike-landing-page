@@ -69,7 +69,7 @@ export default function VideoHeroSection() {
     };
   }, [isMobile]);
 
-  // Fallback image for mobile - This variable is no longer directly used for the background image.
+  // Fallback image for mobile
   const fallbackImage = "https://img.youtube.com/vi/Da1XEUPexRM/maxresdefault.jpg";
 
   return (
@@ -179,10 +179,12 @@ export default function VideoHeroSection() {
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black z-10"></div>
           
-          {/* Mobile Background - Now just a dark background on mobile */}
+          {/* Mobile Background - Now shows thumbnail */}
           {isMobile ? (
-            // Removed the style prop and background classes, relying on parent bg-black
-            <div className="absolute inset-0 w-full h-full" /> 
+            <div 
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${fallbackImage})` }}
+            />
           ) : (
             <>
               {/* Loading placeholder */}
@@ -205,20 +207,21 @@ export default function VideoHeroSection() {
 
         {/* Content */}
         <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 animate-fade-in-up">
-            <span className="text-gray-50 block sm:inline">Αν σε ενδιαφέρει</span>
-            <br className="hidden sm:block" />
-            <span className="text-gray-50 block mt-2 sm:mt-0 sm:inline">η επιχείρησή σου να εμφανίζεται</span>
-            <br className="hidden sm:block" />
-            <span className="text-orange-500 block mt-2">στην πρώτη σελίδα της Google</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in-up">
+            <span className="text-gray-50 block">Αν σε ενδιαφέρει</span>
+            <span className="text-gray-50 block mt-1 sm:mt-2">η επιχείρησή σου να εμφανίζεται</span>
+            <span className="text-orange-500 block mt-1 sm:mt-2">στην πρώτη σελίδα της Google</span>
           </h1>
-         
           
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium animate-fade-in-up animation-delay-200 mb-6 sm:mb-8">
+            Διάβασε το παρακάτω σύντομο μήνυμα
+          </p>
+
           {/* CTA button with play icon - Now shown on all devices */}
           <button
             onClick={() => setShowVideoModal(true)}
             className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold 
-                      hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400 mb-8
+                      hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400
                       shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">

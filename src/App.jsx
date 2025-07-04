@@ -47,11 +47,11 @@ function App() {
             <p className="text-2xl">
               Στο Facebook; Στο Instagram; <span className="text-orange-500 font-bold">Ή στο Google;</span>
             </p>
-            <p className="text-2xl font-semibold pt-6">
+            <p className="text-2xl font-semibold pt-2">
               Πιστεύω πως και οι δύο γνωρίζουμε την απάντηση.
             </p>
           </div>
-          <div className="mt-12 text-center">
+          <div className="pt-3 text-center">
 
             <p className="text-lg text-gray-300 leading-relaxed">
               Το λέω αυτό γιατί, παρότι τα social media είναι χρήσιμα, συχνά ξεχνάμε τη δυναμική της μεγαλύτερης πλατφόρμας αναζήτησης στον κόσμο: <span className="text-orange-500 font-bold">της Google</span>.
@@ -70,7 +70,7 @@ function App() {
       <AboutMe />
 
       <div className="flex justify-center mb-8">
-        <button className="inline-flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-full font-semibold 
+        <button className="inline-flex items-center text-2xl justify-center bg-orange-500 text-white px-6 py-4 rounded-full font-semibold 
                         hover:bg-orange-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in-up animation-delay-400
                         shadow-lg hover:shadow-xl transform hover:scale-105">
           <span>Ξεκίνα Τώρα</span>
@@ -83,7 +83,7 @@ function App() {
             <span className="text-orange-500">Πώς Λειτουργεί η Υπηρεσία?</span>
           </h2>
           
-          <div className="space-y-8 text-lg text-gray-300 text-center">
+          <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
             <p>
               Κάθε επιχείρηση είναι διαφορετική και έχει τις δικές της ανάγκες.
             </p>
