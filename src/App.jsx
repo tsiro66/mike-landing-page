@@ -40,14 +40,14 @@ useEffect(() => {
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1908509646610367');
+    fbq('init', '1052385300364746');
     fbq('track', 'PageView');
   `;
   document.head.appendChild(script);
 
   // Add noscript fallback
   const noscript = document.createElement('noscript');
-  noscript.innerHTML = '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1908509646610367&ev=PageView&noscript=1" />';
+  noscript.innerHTML = '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1052385300364746&ev=PageView&noscript=1" />';
   document.body.appendChild(noscript);
 
   return () => {
