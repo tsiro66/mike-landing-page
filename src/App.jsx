@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Search, TrendingUp, Award, Users, BarChart3, Zap, ChevronRight, Star, Target, Rocket, Mail, Phone, MessageSquare, Send, CheckCircle, Shield, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-scroll';
 import VideoHeroSection from './VideoHeroSection';
@@ -16,7 +15,6 @@ function App() {
   const [submitStatus, setSubmitStatus] = useState('');
   const [showGDPR, setShowGDPR] = useState(false);
   const [validationError, setValidationError] = useState(false);
-  const location = useLocation();
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -64,7 +62,7 @@ useEffect(() => {
   if (window.fbq) {
     window.fbq('track', 'PageView');
   }
-}, [location]);
+}, []);
 
   const handleSubmit = async (e) => {
   e.preventDefault();
