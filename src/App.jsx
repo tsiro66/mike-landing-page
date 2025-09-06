@@ -452,7 +452,7 @@ useEffect(() => {
       
       <p>Κατασκευή Ιστοσελίδας από</p>
       <a
-        href="https://tsironisportfolio.netlify.app/"
+        href="https://tsiro.dev"
         target="_blank"
         rel="noopener noreferrer"
         className="text-orange-500 hover:text-orange-400 transition duration-200 underline underline-offset-4"
