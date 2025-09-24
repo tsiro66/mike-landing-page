@@ -142,33 +142,75 @@ useEffect(() => {
       
     <VideoHeroSection />
 
-      {/* The Question Section */}
+      {/* Opening Question Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-950">
         <div className="container mx-auto px-6 max-w-4xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-                <span className="text-gray-50">Θα ήθελα να ξεκινήσω με μια απλή </span>
-                <span className="text-orange-500">ερώτηση:</span>
+                <span className="text-gray-50">Όταν δεν έχω πολλά χρήματα για διαφημίσεις και το <br /> </span>
+                <span className="text-orange-500">"στόμα σε στόμα"</span>
+                <span className="text-gray-50"> δεν δουλεύει, πως μπορώ να βρω νέους πελάτες;</span>
             </h2>
             <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
-                <p className="font-semibold">
-                    Όταν έχεις ένα πρόβλημα, όταν ψάχνεις για έναν γιατρό ή ακόμα και όταν θέλεις να βγεις για έναν καφέ, πού κάνεις την αναζήτηση;
+                <p>
+                    Εάν ένας νέος ή ακόμη και παλιός επιχειρηματίας θέλει να φέρει περισσότερους πελάτες αλλά δεν έχει 3000 και 4000 χιλιάρικα να δώσει σε διαφημίσεις, τι μπορεί να κάνει στις μέρες μας;
+                </p>
+                <p className="text-xl">
+                    Να ελπίζει από το <span className="text-orange-500 font-bold">"στόμα σε στόμα"</span>;
+                </p>
+                <p>
+                    Οκ καλό το "στόμα σε στόμα" αλλά αν σταματήσει αυτό να δουλεύει (όπως έχει γίνει δυστυχώς σε πολλούς) - Πως μπορεί αυτός ο επιχειρηματίας να φέρει νέο κόσμο για να πουλήσει την υπηρεσία του;
+                </p>
+                <p className="text-xl font-bold text-white">
+                    Θα βρεις τις απαντήσεις παρακάτω…
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {/* The Question Section */}
+    <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
+        <div className="container mx-auto px-6 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span className="text-gray-50">Θα ήθελα όμως πρώτα να σε ρωτήσω εγώ </span>
+                <span className="text-orange-500">κάτι:</span>
+            </h2>
+            <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
+                <p>
+                    Όταν έχεις ένα πρόβλημα και ψάχνεις να βρεις μία λύση σε ποια πλατφόρμα κάνεις την αναζήτησή σου;
+                </p>
+                <p>
+                    Όταν θες να βρεις ένα κοντινό μαγαζί στην περιοχή που είσαι, σε ποια πλατφόρμα κάνεις την αναζήτησή σου;
                 </p>
                 <p className="text-2xl">
                     Στο Facebook; Στο Instagram; <span className="text-orange-500 font-bold">Ή στο Google;</span>
                 </p>
-                <p className="text-2xl font-semibold">
-                    Πιστεύω πως και οι δύο γνωρίζουμε την απάντηση.
+                <p className="text-xl font-semibold">
+                    Πιστεύω πως και οι δύο γνωρίζουμε ότι η απάντηση είναι το Google.
                 </p>
                 <p className="text-lg leading-relaxed">
-                    Το λέω αυτό γιατί, παρότι τα social media είναι χρήσιμα, συχνά ξεχνάμε τη δυναμική της μεγαλύτερης πλατφόρμας αναζήτησης στον κόσμο: <span className="text-orange-500 font-bold">της Google</span>.
-                </p>
-                <p className="text-xl font-bold text-white">
-                    Και η αλήθεια είναι απλή: εκεί βρίσκονται οι πελάτες που ήδη αναζητούν αυτό που προσφέρει η επιχείρησή σου.
-                </p>
-                <p className="text-2xl text-orange-500 font-bold">
-                    Το ζήτημα είναι αν σε βρίσκουν.
+                    Απ' όλες τις πλατφόρμες του διαδικτύου, <span className="text-orange-500 font-bold">η Google είναι κυρίαρχη</span> γιατί μέσα σε αυτή μπαίνουν όλοι οι Έλληνες όταν ψάχνουν κάτι!
                 </p>
             </div>
+        </div>
+    </section>
+
+    {/* Objection Handling Section */}
+    <section className="py-20 bg-gradient-to-b from-black to-gray-950">
+        <div className="container mx-auto px-6 max-w-4xl">
+            <div className="bg-gradient-to-r from-orange-600/10 to-orange-500/10 p-8 rounded-2xl border border-orange-500/30">
+                <p className="text-xl text-gray-300 mb-6">
+                    Κάποιοι θα πουν <span className="italic">"έχω δοκιμάσει διαφημίσεις στο παρελθόν στην Google και δεν δούλεψαν"</span>.
+                </p>
+                <p className="text-xl text-gray-300 mb-6">
+                    Το καταλαβαίνω, ο στόχος όμως δεν είναι να κάνεις πλούσια την κάθε εταιρεία δίνοντάς της χρήματα για διαφημίσεις μία ζωή, αλλά…
+                </p>
+                <p className="text-2xl font-bold text-orange-500">
+                    Να στήσεις έτσι την επιχείρησή σου στο διαδίκτυο ώστε χωρίς χρήματα κάθε μήνα όταν κάποιος σε αναζητά να μπορεί να σε βρει!
+                </p>
+            </div>
+            <p className="text-2xl font-bold text-center mt-12 text-white">
+                Γίνεται αυτό στις μέρες μας;
+            </p>
         </div>
     </section>
 
@@ -187,76 +229,75 @@ useEffect(() => {
           <span className='pb-1'>Ξεκίνα Τώρα</span>
         </Link>
       </div>
-      {/* Services Explanation Section */}
+
+      {/* Experience & Results Section */}
       <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            <span className="text-orange-500">Πώς Λειτουργεί η Υπηρεσία?</span>
-          </h2>
-          
           <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
             <p>
-              Κάθε επιχείρηση είναι διαφορετική και έχει τις δικές της ανάγκες.
+              Έχοντας συνεργαστεί με <span className="text-orange-500 font-bold">πάνω από 40 διαφορετικούς κλάδους</span> και σύνολο κοντά στις <span className="text-orange-500 font-bold">200 επιχειρήσεις</span> (στην Ελλάδα) τα τελευταία <span className="text-orange-500 font-bold">7 χρόνια</span>...
+            </p>
+            <p className="text-2xl font-bold text-white">
+              Μπορώ να σου πω πως γίνεται να βγεις πρώτος στην Google χωρίς να δώσεις χρήματα σε διαφήμιση.
             </p>
             <p>
-              Δεν έχει σημασία αν έχεις εστιατόριο, κομμωτήριο ή δικηγορικό γραφείο..
+              Αρκεί να σετάρουμε στην αρχή σωστά την επιχείρησή σου σε αυτή τη πλατφόρμα έτσι ώστε μετά από λίγο καιρό να δεις τα αποτελέσματα (και να κρίνεις και από μόνος σου).
             </p>
-            <p>
-               Η υπηρεσία που προσφέρω λειτουργεί για κάθε τύπο επιχείρησης.
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-950">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span className="text-orange-500">Πώς Λειτουργεί η Συνεργασία;</span>
+          </h2>
+          
+          <div className="bg-gradient-to-r from-orange-600/10 to-orange-500/10 p-8 rounded-2xl border border-orange-500/30">
+            <p className="text-xl text-gray-300 mb-6">
+              Η δουλειά που κάνω <span className="font-bold text-white">πληρώνεται μία φορά</span> (και όχι με τον μήνα) αλλά επειδή δεν είμαι μάγος και δεν θέλω να υποσχεθώ πως θα σου φέρω 20-30-50 νέους πελάτες, καλό θα ήταν για αρχή να μιλήσουμε πρώτα τηλεφωνικά.
             </p>
-            
-            <div className="bg-gradient-to-r from-orange-600/10 to-orange-500/10 p-8 rounded-2xl border border-orange-500/30">
-              <p className="text-xl font-bold text-white mb-4">
-                Αυτό όμως που την κάνει να ξεχωρίζει, είναι ότι δεν προσφέρεται μαζικά.
-              </p>
-              <p className="text-xl font-bold text-white mb-4">
-                Δεν συνεργάζομαι με "όλους όσους θέλουν".
-              </p>
-              
-              <p>
-                 Συνεργάζομαι μόνο με όσους πραγματικά μπορώ να βοηθήσω.
-              </p>
-              <p className='pt-4'>
-                  Και αυτό γιατί για κάθε περιοχή και για κάθε είδος επιχείρησης, επιλέγω να δουλεύω μόνο με έναν επαγγελματία.
-              </p>
-              <p className="text-xl text-orange-500 font-bold mt-4">
-                Γιατί αλλιώς δεν έχει κανένα νόημα. Αν αναλάβω και τον ανταγωνιστή σου, ποιον θα βγάλω πρώτο στην Google;
-              </p>
-            </div>
+            <p className="text-xl text-gray-300 mb-6">
+              Ο κάθε κλάδος έχει τις ιδιαιτερότητές του και σαφώς όπως καταλαβαίνεις μου είναι δύσκολο να συνεργαστώ με όλους.
+            </p>
+            <p className="text-xl font-bold text-orange-500">
+              Βάλε τα στοιχεία σου στην παρακάτω φόρμα επικοινωνίας για να σε καλέσω σε 24-48 ώρες.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-orange-500/50 transition-colors">
               <Target className="w-12 h-12 text-orange-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Αποκλειστικότητα</h3>
-              <p className="text-gray-400">Μία επιχείρηση ανά κατηγορία και περιοχή</p>
+              <h3 className="text-xl font-bold mb-2">Μία Πληρωμή</h3>
+              <p className="text-gray-400">Όχι μηνιαίες χρεώσεις</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-orange-500/50 transition-colors">
               <Shield className="w-12 h-12 text-orange-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Εγγύηση</h3>
-              <p className="text-gray-400">6 μήνες εγγύηση αποτελεσμάτων</p>
+              <h3 className="text-xl font-bold mb-2">Εξατομικευμένη Προσέγγιση</h3>
+              <p className="text-gray-400">Κάθε κλάδος έχει τις ιδιαιτερότητές του</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-orange-500/50 transition-colors">
               <Clock className="w-12 h-12 text-orange-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Απάντηση</h3>
-              <p className="text-gray-400">Επικοινωνία μέσα σε 48 ώρες</p>
+              <h3 className="text-xl font-bold mb-2">Γρήγορη Επικοινωνία</h3>
+              <p className="text-gray-400">Απάντηση σε 24-48 ώρες</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-950">
+      <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             <span className="text-orange-500">Αποδεδειγμένα Αποτελέσματα</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: '100+', label: 'Επιχειρήσεις' },
+              { value: '200', label: 'Επιχειρήσεις' },
               { value: '7+', label: 'Χρόνια Εμπειρίας' },
-              { value: '1η', label: 'Σελίδα στο Google' },
-              { value: '48h', label: 'Χρόνος Απάντησης' }
+              { value: '40+', label: 'Διαφορετικοί Κλάδοι' },
+              { value: '24-48h', label: 'Χρόνος Απάντησης' }
             ].map((stat, index) => (
               <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300">
                 <div className="text-4xl md:text-5xl font-bold text-orange-500 mb-2">
@@ -268,57 +309,18 @@ useEffect(() => {
           </div>
         </div>
       </section>
-
-      {/* Promise Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="bg-gradient-to-b from-gray-900 to-gray-950 p-12 rounded-3xl border border-gray-800">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              <span className="text-orange-500">Η Υπόσχεσή μου</span>
-            </h2>
-            
-            <div className="space-y-6 text-lg text-gray-300 text-center">
-              <p>
-                Δεν σου υπόσχομαι μαγικά αποτελέσματα.
-              </p>
-              <p>
-                Σου υπόσχομαι όμως μια <span className="font-bold text-white">ξεκάθαρη στρατηγική</span>, προσαρμοσμένη στις δικές σου ανάγκες, με στόχο την <span className="font-bold text-white">πραγματική αύξηση των πελατών σου μέσω Google</span>.
-              </p>
-              
-              <div className="bg-orange-500/10 p-6 rounded-xl border border-orange-500/30">
-                <p className="text-xl font-bold text-orange-500 mb-2">
-                  Και για να έχεις το κεφάλι σου ήσυχο:
-                </p>
-                <p className="text-white font-semibold">
-                  Η υπηρεσία συνοδεύεται από εγγύηση.
-                </p>
-                <p className="text-white font-semibold">
-                  Αν μέσα στους πρώτους έξι μήνες δεν δεις μετρήσιμα αποτελέσματα, παίρνεις τα χρήματά σου πίσω.
-                </p>
-              </div>
-              
-              <p className="text-center text-xl font-bold text-orange-500 pt-4">
-                Η διαθεσιμότητα είναι περιορισμένη και ισχύει αυστηρά για μία επιχείρηση ανά κατηγορία και περιοχή.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bio Section with Second Photo */}
-     
-
+  
       {/* Contact Form Section */}
       <section id="contact-form" className="py-20 bg-gradient-to-b from-black to-gray-950">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
               <span className="text-orange-500">
-                Θα επικοινωνήσω μαζί σου μέσα σε 48 ώρες
+                Θα επικοινωνήσω μαζί σου μέσα σε 24-48 ώρες
               </span>
             </h2>
             <p className="text-xl text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-                Θα δούμε αν η περιοχή σου είναι ακόμα διαθέσιμη και αν έχει νόημα να προχωρήσουμε.
+                Βάλε τα στοιχεία σου παρακάτω για να δούμε αν μπορώ να σε βοηθήσω να κυριαρχήσεις στο Google.
             </p>
 
             <div className="bg-gradient-to-b from-gray-900 to-gray-950 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl">
@@ -363,7 +365,7 @@ useEffect(() => {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="123 456 7890"
+                    placeholder="69X XXX XXXX"
                   />
                 </div>
 
@@ -371,7 +373,7 @@ useEffect(() => {
                   onClick={handleSubmit}
                   className="w-full bg-gradient-to-r from-orange-600 to-orange-500 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  Έλεγχος Διαθεσιμότητας <Send className="w-5 h-5" />
+                  Θέλω Να Μάθω Περισσότερα <Send className="w-5 h-5" />
                 </button>
 
                 {submitStatus && (
@@ -385,7 +387,7 @@ useEffect(() => {
               <div className="mt-8 pt-8 border-t border-gray-800">
                 <p className="text-center text-gray-400">
                   <Shield className="w-5 h-5 inline mr-2" />
-                  Εγγύηση 6 μηνών • Αποκλειστική συνεργασία ανά περιοχή • Μετρήσιμα αποτελέσματα
+                  Μία πληρωμή • Χωρίς μηνιαίες χρεώσεις • Μετρήσιμα αποτελέσματα
                 </p>
               </div>
             </div>
@@ -402,7 +404,7 @@ useEffect(() => {
               </h2>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  Ο κ. Μιχάλης Ζαργιανάκης έχει βοηθήσει πάνω από 100 επιχειρήσεις τα τελευταία 7 χρόνια να αυξήσουν τα έσοδά τους αξιοποιώντας στοχευμένα τη δύναμη της Google.
+                  Ο κ. Μιχάλης Ζαργιανάκης έχει βοηθήσει πάνω από 200 επιχειρήσεις τα τελευταία 7 χρόνια να αυξήσουν τα έσοδά τους αξιοποιώντας στοχευμένα τη δύναμη της Google.
                 </p>
                 <p>
                   Με σπουδές στην Πληροφορική και εξειδίκευση στο Digital Marketing, έχει αναπτύξει μεθοδολογία που βασίζεται σε στρατηγική προβολή και μετρήσιμα αποτελέσματα.
@@ -415,7 +417,7 @@ useEffect(() => {
                 {[
                   { icon: <Award />, label: 'Πτυχίο Πληροφορικής' },
                   { icon: <BarChart3 />, label: 'Εξειδίκευση Digital Marketing' },
-                  { icon: <Users />, label: '100+ Επιτυχημένες Συνεργασίες' },
+                  { icon: <Users />, label: '200+ Επιτυχημένες Συνεργασίες' },
                   { icon: <Star />, label: 'Μετρήσιμα Αποτελέσματα' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">

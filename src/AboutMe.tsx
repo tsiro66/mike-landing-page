@@ -1,10 +1,10 @@
 const AboutMe = () => {
   return (
     <section className="py-20 relative">
-      <div className="container mx-auto px-10 md:px-20">
+      <div className="container mx-auto px-5 md:px-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center sm:text-left">
               <span className="text-orange-500">Άσε με να συστηθώ...</span>
             </h2>
             <p className="text-xl mb-6">
@@ -58,7 +58,7 @@ const AboutMe = () => {
               className="relative transform hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-600 to-orange-500 p-4 md:p-6 rounded-2xl shadow-xl">
-              <div className="text-xl font-bold">100+ Επιχειρήσεις</div>
+              <div className="text-xl font-bold">200+ Επιχειρήσεις</div>
               <div className="text-lg">7+ χρόνια εμπειρίας</div>
             </div>
           </div>
