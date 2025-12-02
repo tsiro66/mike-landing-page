@@ -5,6 +5,7 @@ import VideoHeroSection from './VideoHeroSection';
 import AboutMe from './AboutMe';
 import GDPR from './GDPR';
 import emailjs from '@emailjs/browser';
+import VideoContactMe from './VideoContactMe';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -309,7 +310,9 @@ useEffect(() => {
           </div>
         </div>
       </section>
-  
+  <VideoContactMe 
+  videoId='2fKQfe94qU4'/>
+
       {/* Contact Form Section */}
       <section id="contact-form" className="py-20 bg-gradient-to-b from-black to-gray-950">
         <div className="container mx-auto px-6">
