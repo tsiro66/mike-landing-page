@@ -151,6 +151,8 @@ useEffect(() => {
                 <span className="text-orange-500">"στόμα σε στόμα"</span>
                 <span className="text-gray-50"> δεν δουλεύει, πως μπορώ να βρω νέους πελάτες;</span>
             </h2>
+              <VideoContactMe 
+  videoId='2fKQfe94qU4'/>
             <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
                 <p>
                     Εάν ένας νέος ή ακόμη και παλιός επιχειρηματίας θέλει να φέρει περισσότερους πελάτες αλλά δεν έχει 3000 και 4000 χιλιάρικα να δώσει σε διαφημίσεις, τι μπορεί να κάνει στις μέρες μας;
@@ -310,8 +312,7 @@ useEffect(() => {
           </div>
         </div>
       </section>
-  <VideoContactMe 
-  videoId='2fKQfe94qU4'/>
+
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-20 bg-gradient-to-b from-black to-gray-950">

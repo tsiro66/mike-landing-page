@@ -23,8 +23,8 @@ function VideoContactMe({ videoId, title = 'Embedded YouTube Video' }) {
 
   return (
     <>
-<h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              <span className="text-orange-500">
+<h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+              <span>
                 Δυνάμωσε ήχο και δες το συντομο βιντεο
               </span>
             </h2>
