@@ -387,13 +387,6 @@ useEffect(() => {
                   </div>
                 )}
               </div>
-
-              <div className="mt-8 pt-8 border-t border-gray-800">
-                <p className="text-center text-gray-400">
-                  <Shield className="w-5 h-5 inline mr-2" />
-                  Μία πληρωμή • Χωρίς μηνιαίες χρεώσεις • Μετρήσιμα αποτελέσματα
-                </p>
-              </div>
             </div>
           </div>
         </div>
