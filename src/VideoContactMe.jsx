@@ -14,7 +14,7 @@ function VideoContactMe({ videoId, title = "Embedded YouTube Video" }) {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   // Embed URL with cleanup parameters and autoplay enabled after click
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&vq=hd1080`;
 
   // 2. Click Handler
   const handlePlayClick = () => {
