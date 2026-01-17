@@ -152,7 +152,7 @@ useEffect(() => {
                 <span className="text-gray-50"> δεν δουλεύει, πως μπορώ να βρω νέους πελάτες;</span>
             </h2>
               <VideoContactMe 
-  videoId='2fKQfe94qU4'/>
+  videoId='7ZhnYe9BD7Q'/>
             <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
                 <p>
                     Εάν ένας νέος ή ακόμη και παλιός επιχειρηματίας θέλει να φέρει περισσότερους πελάτες αλλά δεν έχει 3000 και 4000 χιλιάρικα να δώσει σε διαφημίσεις, τι μπορεί να κάνει στις μέρες μας;
@@ -259,7 +259,7 @@ useEffect(() => {
           
           <div className="bg-gradient-to-r from-orange-600/10 to-orange-500/10 p-8 rounded-2xl border border-orange-500/30">
             <p className="text-xl text-gray-300 mb-6">
-              Η δουλειά που κάνω <span className="font-bold text-white">πληρώνεται μία φορά</span> (και όχι με τον μήνα) αλλά επειδή δεν είμαι μάγος και δεν θέλω να υποσχεθώ πως θα σου φέρω 20-30-50 νέους πελάτες, καλό θα ήταν για αρχή να μιλήσουμε πρώτα τηλεφωνικά.
+              Δεν είμαι μάγος και δεν θέλω να υποσχεθώ πως θα σου φέρω 20-30-50 νέους πελάτες, καλό θα ήταν για αρχή να μιλήσουμε πρώτα τηλεφωνικά.
             </p>
             <p className="text-xl text-gray-300 mb-6">
               Ο κάθε κλάδος έχει τις ιδιαιτερότητές του και σαφώς όπως καταλαβαίνεις μου είναι δύσκολο να συνεργαστώ με όλους.
@@ -272,8 +272,8 @@ useEffect(() => {
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-orange-500/50 transition-colors">
               <Target className="w-12 h-12 text-orange-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Μία Πληρωμή</h3>
-              <p className="text-gray-400">Όχι μηνιαίες χρεώσεις</p>
+              <h3 className="text-xl font-bold mb-2">Εγγύηση</h3>
+              <p className="text-gray-400">Εγγύηση υπηρεσίας με αποτελέσματα</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-orange-500/50 transition-colors">
               <Shield className="w-12 h-12 text-orange-500 mb-4" />
