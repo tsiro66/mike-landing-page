@@ -14,8 +14,7 @@ function VideoContactMe({ videoId, title = "Embedded YouTube Video" }) {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   // Embed URL with cleanup parameters and autoplay enabled after click
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1&rel=0&modestbranding=1`;
-
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
   // 2. Click Handler
   const handlePlayClick = () => {
     setIsLoaded(true);
@@ -29,7 +28,7 @@ function VideoContactMe({ videoId, title = "Embedded YouTube Video" }) {
       </h2>
       <div className="mx-auto my-6 w-full max-w-4xl rounded-4xl shadow-2xl overflow-hidden bg-gray-900">
         {/* Aspect Ratio Container (16:9) - This is Tailwind's way of doing responsive video */}
-        <div className="relative pt-[56.25%]">
+        <div className="aspect-video relative w-full overflow-hidden bg-black">
           {" "}
           {/* pt-[56.25%] = 9/16 for 16:9 ratio */}
           {/* If the video is NOT loaded, show the custom placeholder */}
@@ -58,8 +57,7 @@ function VideoContactMe({ videoId, title = "Embedded YouTube Video" }) {
               className="absolute inset-0 w-full h-full"
               src={embedUrl}
               title={title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           )}
