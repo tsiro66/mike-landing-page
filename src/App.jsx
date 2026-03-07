@@ -172,10 +172,10 @@ useEffect(() => {
 
     {/* The Question Section */}
     <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
-        <div className="container mx-auto px-6 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 <span className="text-gray-50">Θα ήθελα όμως πρώτα να σε ρωτήσω εγώ </span>
-                <span className="text-orange-500">κάτι:</span>
+                <span className="text-orange-500">κάτι</span>
             </h2>
             <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
                 <p>
@@ -375,9 +375,10 @@ useEffect(() => {
 
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-orange-600 to-orange-500 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-orange-600 to-orange-500 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/25
+                   transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Θέλω Να Μάθω Περισσότερα <Send className="w-5 h-5" />
+                  Θέλω να μάθω περισσότερα <Send className="w-5 h-5" />
                 </button>
 
                 {submitStatus && (
@@ -441,7 +442,7 @@ useEffect(() => {
     
     {/* Left Section */}
     <div className="text-center md:text-left space-y-2">
-      <p>&copy; 2025 Μιχάλης Ζαργιανάκης - SEO Expert</p>
+      <p>&copy; 2026 Μιχάλης Ζαργιανάκης - SEO Expert</p>
       <p>Βοηθάμε επιχειρήσεις να κυριαρχούν στο Google από το 2017.</p>
       
     </div>
@@ -449,18 +450,19 @@ useEffect(() => {
     {/* Right Section */}
     <div className="text-center flex flex-col md:text-right space-y-2">
       
-      <p>Κατασκευή Ιστοσελίδας από</p>
+      <p>Κατασκευή Ιστοσελίδας από {" "} 
       <a
-        href="https://tsiro.dev"
+        href="https://www.flux-web.com"
         target="_blank"
         rel="noopener noreferrer"
         className="text-orange-500 hover:text-orange-400 transition duration-200 underline underline-offset-4"
       >
-        Thodoris Tsironis
+        flux-web.com
       </a>
+      </p>
       <button
         onClick={() => setShowGDPR(true)}
-        className="text-orange-500 hover:text-orange-400 transition duration-200 underline underline-offset-4"
+        className="text-orange-500 hover:text-orange-400 transition duration-200 underline underline-offset-4 cursor-pointer"
       >
         Πολιτική Απορρήτου & GDPR
       </button>

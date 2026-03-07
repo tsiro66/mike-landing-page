@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 export default function VideoHeroSection() {
   const playerRef = useRef(null);
@@ -9,31 +9,34 @@ export default function VideoHeroSection() {
   useEffect(() => {
     // Check if mobile
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /iPhone|iPad|iPod|Android/i.test(navigator.userAgent),
+      );
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     // Only load background video on desktop
     if (!isMobile) {
       // Load YouTube IFrame API
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName("script")[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
       // Initialize player when API is ready
       window.onYouTubeIframeAPIReady = () => {
-        playerRef.current = new window.YT.Player('youtube-player', {
-          videoId: 'Da1XEUPexRM',
+        playerRef.current = new window.YT.Player("youtube-player", {
+          videoId: "Da1XEUPexRM",
           playerVars: {
             autoplay: 1,
             controls: 0,
             showinfo: 0,
             modestbranding: 1,
             loop: 1,
-            playlist: 'Da1XEUPexRM',
+            playlist: "Da1XEUPexRM",
             fs: 0,
             cc_load_policy: 0,
             iv_load_policy: 3,
@@ -43,7 +46,7 @@ export default function VideoHeroSection() {
             disablekb: 1,
             enablejsapi: 1,
             playsinline: 1,
-            origin: window.location.origin
+            origin: window.location.origin,
           },
           events: {
             onReady: (event) => {
@@ -55,14 +58,14 @@ export default function VideoHeroSection() {
               if (event.data === window.YT.PlayerState.ENDED) {
                 playerRef.current.playVideo();
               }
-            }
-          }
+            },
+          },
         });
       };
     }
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
       if (playerRef.current && playerRef.current.destroy) {
         playerRef.current.destroy();
       }
@@ -70,7 +73,8 @@ export default function VideoHeroSection() {
   }, [isMobile]);
 
   // Fallback image for mobile
-  const fallbackImage = "https://img.youtube.com/vi/Da1XEUPexRM/maxresdefault.jpg";
+  const fallbackImage =
+    "https://img.youtube.com/vi/Da1XEUPexRM/maxresdefault.jpg";
 
   return (
     <>
@@ -178,10 +182,10 @@ export default function VideoHeroSection() {
         <div className="absolute inset-0 z-0">
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black z-10"></div>
-          
+
           {/* Mobile Background - Now shows thumbnail */}
           {isMobile ? (
-            <div 
+            <div
               className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${fallbackImage})` }}
             />
@@ -190,13 +194,13 @@ export default function VideoHeroSection() {
               {/* Loading placeholder */}
               {!videoLoaded && (
                 <div className="absolute inset-0 bg-black">
-                  <div 
+                  <div
                     className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
                     style={{ backgroundImage: `url(${fallbackImage})` }}
                   />
                 </div>
               )}
-              
+
               {/* YouTube Player Container - Desktop only */}
               <div className="youtube-container">
                 <div id="youtube-player" className="w-full h-full" />
@@ -206,13 +210,17 @@ export default function VideoHeroSection() {
         </div>
 
         {/* Content */}
-        <div className="relative z-20 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+        <div className="relative z-20 text-center px-4 sm:px-6 max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in-up">
             <span className="text-gray-50 block">Αν σε ενδιαφέρει</span>
-            <span className="text-gray-50 block mt-1 sm:mt-2">η επιχείρησή σου να εμφανίζεται</span>
-            <span className="text-orange-500 block mt-1 sm:mt-2">στην πρώτη σελίδα της Google</span>
+            <span className="text-gray-50 block mt-1 sm:mt-2">
+              η επιχείρησή σου να εμφανίζεται
+            </span>
+            <span className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 bg-clip-text text-transparent block pb-1 mt-1 sm:mt-2">
+              στην πρώτη σελίδα της Google
+            </span>
           </h1>
-          
+
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium animate-fade-in-up animation-delay-200 mb-6 sm:mb-8">
             Διάβασε το παρακάτω σύντομο μήνυμα
           </p>
@@ -225,18 +233,23 @@ export default function VideoHeroSection() {
                       shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm-2 14.5v-9l6 4.5-6 4.5z"/>
+              <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm-2 14.5v-9l6 4.5-6 4.5z" />
             </svg>
             Παρακολουθήστε το Βίντεο
           </button>
-          
         </div>
 
         {/* Video Modal - Now shown on all devices */}
         {showVideoModal && (
           <div className="video-modal" onClick={() => setShowVideoModal(false)}>
-            <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
-              <button className="close-button" onClick={() => setShowVideoModal(false)}>
+            <div
+              className="video-modal-container"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="close-button"
+                onClick={() => setShowVideoModal(false)}
+              >
                 ×
               </button>
               <iframe
