@@ -359,7 +359,7 @@ useEffect(() => {
                     value={formData.email}
                     onChange={handleChange}
                     className={`max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.email ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="Γράψε το email σου (π.χ. example@mail.com)"
+                    placeholder="Γράψε το email σου"
                   />
                 </div>
 
@@ -373,7 +373,7 @@ useEffect(() => {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="Γράψε το κινητό σου (προσοχή ΜΗΝ κάνεις λάθος)"
+                    placeholder="Γράψε το κινητό σου (ΜΗΝ κάνεις λάθος)"
                   />
                 </div>
 
