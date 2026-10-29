@@ -407,7 +407,7 @@ useEffect(() => {
 
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-orange-600 to-orange-500 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/25
+                  className="w-full bg-gradient-to-r from-orange-600 to-orange-500 px-8 py-4 rounded-lg font-bold md:text-lg hover:shadow-2xl hover:shadow-orange-500/25
                    transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Θέλω να μάθω περισσότερα <Send className="w-5 h-5" />
