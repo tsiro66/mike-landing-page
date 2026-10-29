@@ -11,7 +11,9 @@ function App() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    businessCategory: '',
+    availability: ''
   });
   const [submitStatus, setSubmitStatus] = useState('');
   const [showGDPR, setShowGDPR] = useState(false);
@@ -104,6 +106,8 @@ useEffect(() => {
       name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
+      business_category: formData.businessCategory || '—',
+      availability: formData.availability || '—',
       to_name: 'Μιχάλης Ζαργιανάκης',
       reply_to: formData.email,
     };
@@ -121,7 +125,7 @@ useEffect(() => {
     setValidationError(false);
     // Clear form after 5 seconds
     setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '' });
+      setFormData({ name: '', email: '', phone: '', businessCategory: '', availability: '' });
       setSubmitStatus('');
     }, 5000);
     
@@ -152,7 +156,7 @@ useEffect(() => {
                 <span className="text-gray-50"> δεν δουλεύει, πως μπορώ να βρω νέους πελάτες;</span>
             </h2>
               <VideoContactMe 
-              videoId='7ZhnYe9BD7Q'/>
+              videoId='ygqDzb_qLOg'/>
             <div className="space-y-8 text-lg md:text-xl text-gray-300 text-center">
                 <p>
                     Εάν ένας νέος ή ακόμη και παλιός επιχειρηματίας θέλει να φέρει περισσότερους πελάτες αλλά δεν έχει 3000 και 4000 χιλιάρικα να δώσει σε διαφημίσεις, τι μπορεί να κάνει στις μέρες μας;
@@ -341,7 +345,7 @@ useEffect(() => {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.name ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="Το όνομά σας"
+                    placeholder="Γραψε το ονομα"
                   />
                 </div>
                 
@@ -355,7 +359,7 @@ useEffect(() => {
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.email ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="email@example.com"
+                    placeholder="Γραψε το email"
                   />
                 </div>
 
@@ -369,7 +373,35 @@ useEffect(() => {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="69X XXX XXXX"
+                    placeholder="Γραψε το κινητο (προσοχη μην γινει λαθος)"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Κατηγορια και περιοχη επιχειρησης
+                  </label>
+                  <input
+                    type="text"
+                    name="businessCategory"
+                    value={formData.businessCategory}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
+                    placeholder="Κομμωτηριο, Χαλανδρι"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Ωρες διαθεσιμοτητας
+                  </label>
+                  <input
+                    type="text"
+                    name="availability"
+                    value={formData.availability}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
+                    placeholder="Τι ωρα μπορουμε να καλεσουμε"
                   />
                 </div>
 
