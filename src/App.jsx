@@ -345,7 +345,7 @@ useEffect(() => {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.name ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="Γραψε το ονομα"
+                    placeholder="Γράψε το όνομά σου"
                   />
                 </div>
                 
@@ -359,7 +359,7 @@ useEffect(() => {
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.email ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="Γραψε το email"
+                    placeholder="Γράψε το email σου (π.χ. example@mail.com)"
                   />
                 </div>
 
@@ -373,13 +373,13 @@ useEffect(() => {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
-                    placeholder="Γραψε το κινητο (προσοχη μην γινει λαθος)"
+                    placeholder="Γράψε το κινητό σου (προσοχή ΜΗΝ κάνεις λάθος)"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Κατηγορια και περιοχη επιχειρησης
+                    Κατηγορία και περιοχή επιχείρησης
                   </label>
                   <input
                     type="text"
@@ -387,13 +387,13 @@ useEffect(() => {
                     value={formData.businessCategory}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
-                    placeholder="Κομμωτηριο, Χαλανδρι"
+                    placeholder="Κομμωτήριο, Χαλάνδρι"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Ωρες διαθεσιμοτητας
+                    Ώρες διαθεσιμότητας
                   </label>
                   <input
                     type="text"
@@ -401,7 +401,7 @@ useEffect(() => {
                     value={formData.availability}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
-                    placeholder="Τι ωρα μπορουμε να καλεσουμε"
+                    placeholder="Τι ώρα μπορούμε να καλέσουμε;"
                   />
                 </div>
 
