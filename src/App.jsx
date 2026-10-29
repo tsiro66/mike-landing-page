@@ -320,7 +320,7 @@ useEffect(() => {
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-20 bg-gradient-to-b from-black to-gray-950">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">
               <span className="text-orange-500">
@@ -331,10 +331,10 @@ useEffect(() => {
                 Βάλε τα στοιχεία σου παρακάτω για να δούμε αν μπορώ να σε βοηθήσω να κυριαρχήσεις στο Google.
             </p>
 
-            <div className="bg-gradient-to-b from-gray-900 to-gray-950 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl">
+            <div className="bg-gradient-to-b from-gray-900 to-gray-950 px-5 py-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl">
             
               
-              <div className="space-y-6">
+              <div className="space-y-5 md:space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Όνομα *
@@ -344,7 +344,7 @@ useEffect(() => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.name ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
+                    className={`max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.name ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
                     placeholder="Γράψε το όνομά σου"
                   />
                 </div>
@@ -358,7 +358,7 @@ useEffect(() => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.email ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
+                    className={`max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.email ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
                     placeholder="Γράψε το email σου (π.χ. example@mail.com)"
                   />
                 </div>
@@ -372,7 +372,7 @@ useEffect(() => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
+                    className={`max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border rounded-lg focus:outline-none transition-colors ${validationError && !formData.phone ? 'border-red-500 focus:border-red-500 placeholder-red-400' : 'border-gray-700 focus:border-orange-500'}`}
                     placeholder="Γράψε το κινητό σου (προσοχή ΜΗΝ κάνεις λάθος)"
                   />
                 </div>
@@ -386,7 +386,7 @@ useEffect(() => {
                     name="businessCategory"
                     value={formData.businessCategory}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
+                    className="max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
                     placeholder="Κομμωτήριο, Χαλάνδρι"
                   />
                 </div>
@@ -400,7 +400,7 @@ useEffect(() => {
                     name="availability"
                     value={formData.availability}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
+                    className="max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
                     placeholder="Τι ώρα μπορούμε να καλέσουμε;"
                   />
                 </div>
