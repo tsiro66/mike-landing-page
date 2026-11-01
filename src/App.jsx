@@ -387,7 +387,7 @@ useEffect(() => {
                     value={formData.businessCategory}
                     onChange={handleChange}
                     className="max-md:placeholder:text-sm w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none transition-colors focus:border-orange-500"
-                    placeholder="Κομμωτήριο, Χαλάνδρι"
+                    placeholder="π.χ. Κομμωτήριο, Χαλάνδρι"
                   />
                 </div>
 
